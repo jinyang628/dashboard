@@ -3,6 +3,7 @@ import { useState } from "react";
 import UrlInput from "@/components/url-input";
 import { UrlState } from "@/types/state/url";
 import { Button } from "@/components/ui/button"
+import HeaderButtons from "@/components/header/header-buttons";
 
 export default function Home() {
   const [routes, setRoutes] = useState<Record<number, Record<number, string>>>({
@@ -37,7 +38,9 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8">
+    <>
+    <HeaderButtons/>
+    <div className="flex flex-col items-center justify-center min-h-[80vh] p-8">
       <div className="flex justify-center p-8">
         <div className="flex items-center space-x-8">
           {Object.entries(routes).map(([level, ids]) => (
@@ -62,5 +65,6 @@ export default function Home() {
           Confirm
       </Button>
     </div>
+    </>
   );
 }

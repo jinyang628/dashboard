@@ -18,7 +18,7 @@ import {
   FeedbackRequest,
   feedbackRequestSchema,
 } from "@/types/api/feedback/form";
-import { useForm } from "react-hook-form/dist";
+import { useForm } from "react-hook-form";
 
 interface ReportFormProps {
   handleSubmitFeedback: (values: FeedbackRequest) => void;
