@@ -3,7 +3,7 @@
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
-import { UrlState } from "@/types/state/url";
+import { levelPlaceholderMapping, UrlState } from "@/types/state/url";
 
 type UrlInputProps = {
   level: number;
@@ -16,7 +16,7 @@ export default function UrlInput({ level, id, value, updateUrlState, addRoute}: 
   return (
     <div className="flex items-center mr-8">
       <Input
-        placeholder="Enter base url here..."
+        placeholder={level < 4 ? levelPlaceholderMapping[level] : levelPlaceholderMapping[3]}
         value={value}
         onChange={(e) => updateUrlState({
           id: id,

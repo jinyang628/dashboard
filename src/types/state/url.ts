@@ -7,3 +7,9 @@ const urlStateSchema = z.object({
 });
 
 export type UrlState = z.infer<typeof urlStateSchema>;
+
+export const levelPlaceholderMapping: { [key: number]: string } = {
+  1: "https://example.com",
+  2: "/user",
+  3: "/usage",
+};

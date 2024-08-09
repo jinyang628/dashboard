@@ -7,7 +7,6 @@ export default function Home() {
   const [routes, setRoutes] = useState<Record<number, Record<number, string>>>({
     1: { 1: "" },
   });
-  console.log(routes);
 
   const addRoute = (level: number) => {
     setRoutes((prevRoutes) => {
@@ -34,7 +33,7 @@ export default function Home() {
 
   return (
     <main className="flex justify-center h-screen p-8">
-      <div className="flex items-start space-x-8">
+      <div className="flex items-center space-x-8">
         {Object.entries(routes).map(([level, ids]) => (
           <div key={level} className="flex flex-col space-y-4">
             {Object.entries(ids).map(([id, value]) => (
